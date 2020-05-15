@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animaciones Web</title>
+    <title>Animaciones Web Interacciones</title>
     <style>
         .pelota {
             width: 100px;
@@ -16,14 +16,34 @@
             transition-timing-function: ease;*/
             transition: width 1s 1s ease;
         }
-
-        .pelota:hover {
-            width: 200px;
+		
+		      }
+        .pelota.a{
+            background: red;
+            left: 0;
+        }
+        .pelota.b{
+            background: black;
+            right: 0;
+        }
+        .canasta {
+            border: 1px solid black;
+            position: relative;
             height: 200px;
+        }
+        .canasta:hover .pelota.a{
+            left: calc(50% - 100px);
+        }
+
+        .canasta:hover .pelota.b{
+            right: calc(50% - 100px);
         }
     </style>
 </head>
 <body>
-    <div class="pelota"></div>
+	  <div class="canasta">
+        <div class="pelota a"></div>
+        <div class="pelota b"></div>
+    </div>
 </body>
 </html>
