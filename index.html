@@ -3,62 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animaciones Web Interacciones</title>
+    <title>Transformaciones de rotación</title>
     <style>
-        .pelota {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: red;
-            /*transition-property: width;
-            transition-duration: 1s;
-            transition-delay: 1s;
-            transition-timing-function: ease;*/
-            transition: width 1s 1s ease;
-        }
-		
-		      }
-        .pelota.a{
-            background: red;
-            left: 0;
-        }
-        .pelota.b{
-            background: black;
-            right: 0;
-        }
-        .canasta {
-            border: 1px solid black;
-            position: relative;
-            height: 200px;
-        }
-        .canasta:hover .pelota.a{
-            left: calc(50% - 100px);
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            perspective: 200px;
+           /* perspective-origin: top left;*/
         }
 
-        .canasta:hover .pelota.b{
-            right: calc(50% - 100px);
-        }
-		
-		.canasta {
+        .container {
             border: 1px solid black;
-            position: relative;
-            height: 200px;
-            /*transform: rotar | sesgar | position | tamaño;*/
-            transform: rotate(5deg) skew(10deg) translate(100px) scale(1.5);
-        }
-        .canasta:hover .pelota.a{
-            left: calc(50% - 100px);
+            
         }
 
-        .canasta:hover .pelota.b{
-            right: calc(50% - 100px);
+        .container:hover .cuadrado{
+            /*transform: translate(x,y);*/
+            transform: translateZ(100px);
+            /*transform: translate3d(x,y,z)*/
+            transform: translate3d(-100px, -100px, -100px);
         }
+
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;
+            transition: .9s;
+        }
+
     </style>
 </head>
 <body>
-	  <div class="canasta">
-        <div class="pelota a"></div>
-        <div class="pelota b"></div>
+    <div class="container">
+        <div class="cuadrado">
+
+        </div>
     </div>
 </body>
 </html>
