@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transformaciones de sesgado</title>
+    <title>Transformaciones punto de origen</title>
     <style>
         body {
             display: flex;
@@ -22,9 +22,8 @@
         }
 
         .container:hover .cuadrado{
-
-            /*transform: skew(x,y);*/
-            transform: skew(10deg,10deg);
+            transform-origin: 100% 50%;
+            transform: rotateY(45deg);
         }
 
         .cuadrado {
