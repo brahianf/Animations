@@ -30,8 +30,8 @@
             align-items: center;
             justify-content: center;
             animation-name: cuadrado, rebote;
-            animation-duration: 2s, .3s;
-            animation-iteration-count: infinite;
+            animation-duration: 2s, 3s;
+            animation-iteration-count: infinite,20 ;
             animation-timing-function: linear,ease-in-out;
             animation-direction: alternate;
             position: relative;
@@ -45,6 +45,15 @@
             100%{
                 /*opacity: 0;*/
                 left: calc(100% - 240px);
+            }
+        }
+
+        @keyframes escalera {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(500px);
             }
         }
 
@@ -62,8 +71,20 @@
 </head>
 <body>
     <div class="container">
-        <div class="cuadrado">
+        <div class="cuadrado" id="cuadrado">
         </div>
     </div>
+    <script>
+        const $cuadrado = document.getElementById('cuadrado')
+        /*$cuadrado.addEventListener('animationstart', (event) => {*/
+        /*$cuadrado.addEventListener('animationiteration', (event) => {*/
+        $cuadrado.addEventListener('animationend', (event) => {
+            console.log(event.animationName);
+            if(event.animationName === 'rebote'){
+                $cuadrado.style.animationName = 'cuadrado escalera'
+                $cuadrado.style.animationDuration = '3s 3s';
+            }
+        })
+    </script>
 </body>
 </html>
