@@ -3,62 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animaciones Web Interacciones</title>
+    <title>Animaciones CSS</title>
     <style>
-        .pelota {
-            width: 100px;
-            height: 100px;
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial;
+        }      
+        .container {
+            border: 1px solid red;
+            width: 100%;
+        }
+        .container:hover .cuadrado {
+            animation-play-state: paused;
+        }
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;
             border-radius: 50%;
-            background-color: red;
-            /*transition-property: width;
-            transition-duration: 1s;
-            transition-delay: 1s;
-            transition-timing-function: ease;*/
-            transition: width 1s 1s ease;
-        }
-		
-		      }
-        .pelota.a{
-            background: red;
-            left: 0;
-        }
-        .pelota.b{
-            background: black;
-            right: 0;
-        }
-        .canasta {
-            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation-name: cuadrado;
+            animation-duration: 2s;
+            /*animation-delay: 1s;*/
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            /*animation-timing-function: cubic-bezier(1,1,1,1);*/
+            animation-direction: alternate;
+            /*animation-fill-mode: forwards;*/
             position: relative;
-            height: 200px;
-        }
-        .canasta:hover .pelota.a{
-            left: calc(50% - 100px);
         }
 
-        .canasta:hover .pelota.b{
-            right: calc(50% - 100px);
-        }
-		
-		.canasta {
-            border: 1px solid black;
-            position: relative;
-            height: 200px;
-            /*transform: rotar | sesgar | position | tamaño;*/
-            transform: rotate(5deg) skew(10deg) translate(100px) scale(1.5);
-        }
-        .canasta:hover .pelota.a{
-            left: calc(50% - 100px);
+        @keyframes cuadrado {
+            0% {
+                /*opacity: 1;*/
+                left: 0;
+            }
+            100%{
+                /*opacity: 0;*/
+                left: calc(100% - 240px);
+            }
         }
 
-        .canasta:hover .pelota.b{
-            right: calc(50% - 100px);
-        }
+        /*@@ -53,6 +56,15 @@*/
     </style>
 </head>
 <body>
-	  <div class="canasta">
-        <div class="pelota a"></div>
-        <div class="pelota b"></div>
+    <div class="container">
+        <div class="cuadrado">
+        </div>
     </div>
 </body>
 </html>
