@@ -3,93 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animaciones Web Interacciones</title>
+    <title>Animaciones de Entrada y Salida</title>
     <style>
         body {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             background: #234050;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-direction: column;
+        }
+        .btn {
+            text-align: center;
+            padding: .6em .8em;
+            border: none;
+            color: white;
+            background: lightgray;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+            outline: 0;
+            transition: .2s;
+            will-change: transform;
+        }
+        .btn:active {
+            transform: scale(.8);
+        }
+        .btn.primary {
+            background: #7dc800;
+        }
+        .btn.warning {
+            background: #ff463b;
+        }
+        .overlay{
+            background: rgba(0, 0, 0, .5);
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 2s ease-in;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal {
+            width: 500px;
+            background: white;
+            /*animation: name time estado;*/
+            animation: modalIn 2s forwards;
+            padding: 2em;
+            border-radius: .5em;
+            text-align: center;
         }
 
-        .platzi {
-            width: 200px;
-            height: 200px;
-            position: relative;
-            margin: 40px auto;
-            transform: rotate(45deg);
-            animation-name: platzi-base;
-            animation-duration: 3.5s;
-            animation-iteration-count: infinite;
-        }
-
-        .platzi-left {
-            width: 100%;
-            height: 65%;
-            border: 30px solid #97c93e;
-            border-radius: 20px 20px 0 0;
-            border-bottom: none;
-            box-sizing: border-box;
-            position: relative;
-            top:1px;
-            animation-name: platzi-left;
-            animation-duration: 3.5s;
-            animation-delay: 1s;
-            animation-iteration-count: infinite;
-        }
-
-        .platzi-right {
-            width: 100%;
-            height: 35%;
-            border: 30px solid #97c93e;
-            border-radius: 0 0 20px 20px ;
-            border-top: none;
-            box-sizing: border-box;
-        }
-
-        @keyframes platzi-base {
-            0% {
-                opacity: 0;
-                transform: scale(.3) rotate(0deg);
-            }
-            30% {
-                opacity: 1;
-                transform: scale(1.8) rotate(405deg);
-            }
-            80% {
-                opacity: 1;
-                transform: scale(1.8) rotate(405deg);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(.3) rotate(0deg);
-            }
-        }
-
-        @keyframes platzi-left {
-            0% {
-                width: 100%;
-            }
-            20% {
-                width: 80%;
-            }
-            50% {
-                width: 80%;
+        @keyframes modalIn {
+            0%{
+                transform: translateY(-3000px);
             }
             60%{
-                width: 100%;
+                transform: translateY(25px);
+            }
+            75%{
+                transform: translateY(-20px);
+            }
+            90%{
+                transform: translateY(5px);
+            }
+        }
+
+        @keyframes  modalOut {
+            0%{
+                transform: translateY(5px);
+            }
+            60%{
+                transform: translateY(-20px);
+            }
+            75%{
+                transform: translateY(25px);
             }
             100%{
-                width: 100%;
+                transform: translateY(-3000px);
             }
         }
     </style>
 </head>
 <body>
-	  <div class="platzi">
-        <div class="platzi-left"></div>
-        <div class="platzi-right"></div>
+    <img src="platzi.png" alt="">
+    <div class="overlay active" id="overlay">
+        <div class="modal" id="modal">
+            <h1>Aviso</h1>
+            <p>ventana modal</p>
+            <div class="modal-buttons">
+                <button class="btn primary" id="hide-modal">Si</button>
+                <button class="btn warning">No</button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const $overlay = document.getElementById('overlay')
+        const $modal = document.getElementById('modal')
+        const $hideButton = document.getElementById('hide-modal');
+        
+        $hideButton.addEventListener('click', (event) => {
+            //console.log(event)
+            $modal.style.animation = 'modalOut .8s forwards'
+            $overlay.classList.remove('active')
+        });
+    </script>
 </body>
 </html>
