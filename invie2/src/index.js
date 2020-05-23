@@ -4,12 +4,12 @@ import './index.css';
 import Invie from './Invie';
 import * as serviceWorker from './serviceWorker';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Invie />
   </React.StrictMode>,
-  document.getElementById('root')
-  
+  document.getElementById('root') 
 );
 
 // If you want your app to work offline and load faster, you can change
