@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import { CSSTransitionGroup } from 'react-transition-group'
 import logoPlatzi from './platzi.png'
-import './css/invie.css';
 import Portada from './components/Portada.jsx';
 import Guitarras from './components/Guitarras.jsx';
 import Footer from './components/Footer.jsx';
