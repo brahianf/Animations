@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import cheeet from 'cheet.js';
 
 import logoPortada from './images/invie.png';
+import logoPlatzi from './images/platzi.png'
 import acustica from './images/invie-acustica.png';
 import classic from './images/invie-classic.png';
 import easterA from './images/easter-a.png'
@@ -61,11 +62,9 @@ const initialState = {
 const easter = {
   isAnimated: 'is-animated',
   menu: [
-    {
-        href:'index.html',
-        title:'Home',
-    },
+
   ],
+  logoPortada: logoPlatzi,
   guitarras: [
     {
       image: easterA,
