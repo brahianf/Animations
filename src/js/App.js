@@ -31,6 +31,14 @@ class App extends React.Component {
             />
           </CSSTransitionGroup>
           <button onClick={this.onClick.bind(this)}>Click Me!</button>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
         </header>
       </div>
     );
