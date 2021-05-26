@@ -1,0 +1,64 @@
+{
+  "name": "invie2",
+  "version": "0.1.0",
+  "description": "Web Site built with React for guittars",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brahianf/Animations.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "React",
+    "WebPack",
+    "Babel",
+    "React-Router",
+    "React",
+    "Hooks",
+    "Redux"
+  ],
+  "author": "Brahianf Hurtado <brahianf.hurtado@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brahianf/Animations/issues"
+  },
+  "homepage": "https://github.com/brahianf/Animations#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@webpack-cli/init": "^1.1.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^8.0.0",
+    "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.0.0",
+    "dotenv-webpack": "^7.0.2",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.3.9",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "terser-webpack-plugin": "^5.1.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.25.0",
+    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.4",
+    "react-scripts": "^4.0.3",
+    "react-transition-group": "^1.2.1"
+  }
+}
