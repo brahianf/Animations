@@ -3,7 +3,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
 
@@ -89,7 +88,6 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css',
 		}),
-		new Dotenv(),
 		new CleanWebpackPlugin(),
 		// new CopyPlugin({
 		// 	patterns: [
