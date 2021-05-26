@@ -9,7 +9,7 @@ import '@styles/invie.css';
 import '@styles/animations.css';
 import Invie from '@js/Invie';
 import logoPortada from '@images/invie.png';
-import logoPlatzi from '@images/platzi.png'
+import logoGuitar from '@images/invie.png'
 import acustica from '@images/invie-acustica.png';
 import classic from '@images/invie-classic.png';
 import easterA from '@images/easter-a.png'
@@ -62,7 +62,7 @@ const easter = {
   menu: [
 
   ],
-  logoPortada: logoPlatzi,
+  logoPortada: logoGuitar,
   guitarras: [
     {
       image: easterA,
