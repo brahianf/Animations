@@ -107,7 +107,7 @@ input:focus, textarea:focus {
 }
 
 .portada.background.is-animated {
-  background-image: url('../images/team-platzi-azul.jpg');
+  background-image: url('../images/room-guitars.jpg');
   background-repeat: no-repeat;
   animation: background 15s linear infinite alternate;
 }
